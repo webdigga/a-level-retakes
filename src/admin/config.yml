@@ -41,6 +41,16 @@ collections:
         media_library:
           config:
             multiple: false
+      - label: "Highlights box"
+        name: "highlightsBoxes"
+        widget: "list"
+        fields:
+          - { label: Title, name: title, widget: string }
+          - label: Highlights list item
+            name: highlightsListItem
+            widget: list
+            fields:
+              - { label: Highlight, name: highlight, widget: string }
   - label: "ProductCard"
     name: "productCard"
     folder: "src/productCards"

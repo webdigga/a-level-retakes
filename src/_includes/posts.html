@@ -14,7 +14,9 @@ layout: default
 			<h1 class="font-bold text-5xl text-left inline-block mb-5 md:mb-0">{{ title }}</h1>
 
 			{% if 'blog' in tags %}
-				<time class="text-gray-500 text-sm italic block md:text-right min-w-28">{{ date | readableDate }}</time>
+				<time class="text-gray-500 text-sm italic block md:text-right min-w-28">
+					{{ date | readableDate }}
+				</time>
 			{% endif %}
 		</div>
 	
@@ -23,5 +25,48 @@ layout: default
 			{{ content | safe }}
 
 		</article>
+
+		<!-- Highlight boxes -->
+        {% if highlightsBoxes[0] %}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 my-5 lg:mx-0">
+                {% for highlightsBox in highlightsBoxes %}
+                    <div class="bg-white border border-gray-200 rounded-lg shadow flex flex-col">
+
+                        <div class="p-5 flex flex-col grow">
+                            {% if highlightsBox.title %}
+                                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
+									{{ highlightsBox.title }}
+								</h2>
+                            {% endif %}
+
+                            {% if highlightsBox.highlightsListItem[0] %}
+                                <ul>
+                                    {% for highlight in highlightsBox.highlightsListItem %}
+                                        <li class="mb-3 last:mb-0 first:mt-3 font-normal text-gray-700 grow flex items-center">
+                                            <span>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 24 24"
+													fill="var(--primary-color)"
+													class="w-6 h-6">
+													<path
+														fill-rule="evenodd"
+														d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
+														clip-rule="evenodd"
+													/>
+												</svg>
+                                            </span>
+
+											<span class="ml-2">{{ highlight.highlight }}</span>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
 	</div>
 </div>
