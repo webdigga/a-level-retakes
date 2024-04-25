@@ -1,26 +1,12 @@
 ---
-title: A-level-retakes
+title: A-level-Retakes
 description: "When are a level retakes "
 date: 2024-03-11T11:28:32.363Z
 type: article
 tags:
   - article
 heroImage: /static/img/a-level-retakes-large.webp
-highlightsBoxes:
-  - title: Lorem ipsum dolor sit amet
-    highlightsListItem:
-      - highlight: Lorem ipsum dolor sit amet 1
-      - highlight: Lorem ipsum dolor sit amet 2
-      - highlight: Lorem ipsum dolor sit amet 3
-      - highlight: Lorem ipsum dolor sit amet 4
-      - highlight: Lorem ipsum dolor sit amet 5
-  - title: Lorem ipsum dolor sit amet
-    highlightsListItem:
-      - highlight: Lorem ipsum dolor sit amet 1
-      - highlight: Lorem ipsum dolor sit amet 2
-      - highlight: Lorem ipsum dolor sit amet 3
-      - highlight: Lorem ipsum dolor sit amet 4
-      - highlight: Lorem ipsum dolor sit amet 5
+highlightsBoxes: []
 ---
 In the UK, students have the opportunity to retake their A-level exams during the next available examination series after the original exams. Typically, there are two main examination series for A-levels: May/June and October/November. For students seeking to improve their grades or meet subject requirements for further education or university applications, the October/November series offers a chance to retake exams.
 
