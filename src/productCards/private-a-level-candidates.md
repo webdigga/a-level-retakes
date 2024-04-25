@@ -1,6 +1,6 @@
 ---
-title: Private A-level candidates
-description: Lorem ipsum dolor sit amet.
+title: Private A-level Candidates
+description: Exam Centre For External Candidates
 articleLink: /posts/private-a-level-candidates/
 imageAlt: Girl studying on laptop
 image: /static/img/private-exam-candidates-small.webp
