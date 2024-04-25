@@ -1,5 +1,5 @@
 ---
-title: A-level courses
+title: A-level Courses
 description: Available A-Level Retake Courses
 articleLink: /posts/a-level-courses/
 imageAlt: Girl and boy studying
