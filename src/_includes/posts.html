@@ -26,6 +26,18 @@ layout: default
 	
 			{{ content | safe }}
 
+      {% if ctaUrl %}
+        <div class="flex justify-end">
+          <a
+            target="_blank"
+            rel="noopener"
+            href="{{ ctaUrl }}"
+            class="bg-[color:var(--primary-color)] text-white py-4 px-12 rounded-full hover:bg-[color:var(--primary-hover)] no-underline">
+            {{ ctaText }}
+          </a>
+        </div>
+      {% endif %}
+
 		</article>
 
 		<!-- Highlight boxes -->

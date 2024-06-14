@@ -13,4 +13,4 @@ They also provide specialized preparation for competitive degree courses such as
 
 At Westminster Tutors, their commitment to delivering exceptional one-to-one teaching ensures that each student receives personalized attention and achieves their academic goals.
 
-You can find list of their A-Level and A-Level Retake courses [here.](https://a-level-retakes.netlify.app/posts/a-level-courses/)
+You can find list of their A-Level and A-Level Retake courses [here](/posts/a-level-courses/).
