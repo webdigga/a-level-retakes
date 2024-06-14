@@ -26,7 +26,7 @@ layout: default
 	
 			{{ content | safe }}
 
-      {% if ctaUrl %}
+      {% if ctaUrl and 'privacy' not in tags %}
         <div class="flex justify-end">
           <a
             target="_blank"

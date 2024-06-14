@@ -6,6 +6,7 @@ date: 2024-02-29T17:13:10.382Z
 type: article
 tags:
   - article
+  - privacy
 ---
 ## How we collect information
 

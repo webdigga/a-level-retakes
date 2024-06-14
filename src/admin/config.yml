@@ -32,7 +32,7 @@ collections:
         name: "tags"
         multiple: true
         create: true
-        options: ["article", "blog"]
+        options: ["article", "blog", "privacy"]
       - label: "Hero image"
         name: "heroImage"
         widget: "image"
