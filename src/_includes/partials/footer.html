@@ -1,7 +1,9 @@
 <footer class="bg-neutral-50 bottom-0 flex flex-col items-center text-center w-full py-5 clear-right border-t border-solid border-top-gray-100 mt-6">
 
   <p class="pb-1">
-    <small class="text-gray-500">Copyright © {{settings.poweredBy}} {{ helpers.currentYear() }}.</small>
+    <small class="text-gray-500">
+      © {{ helpers.currentYear() }} <a href="{{ settings.poweredByOneUrl }}" target="_blank" rel="noopener" class="underline">{{ settings.poweredByOne }}</a> & <a href="{{ settings.poweredByTwoUrl }}" target="_blank" rel="noopener" class="underline">{{ settings.poweredByTwo }}</a>. All rights reserved.
+    </small>
   </p>
 
   <p class="flex items-center">

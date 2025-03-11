@@ -2,7 +2,10 @@ siteName: A-level retakes
 title: A-Level & GCSE Retakes
 author: David White
 url: https://github.com/webdigga/a-level-retakes
-poweredBy: Arragon Affiliates
+poweredByOne: Kabooly
+poweredByTwo: Arragon Affiliates
+poweredByOneUrl: https://kabooly.com/
+poweredByTwoUrl: https://arragonaffiliates.com/
 description: A-level retakes, courses, and private tuition
 type: website
 logoAlt: A-level retakes Logo
