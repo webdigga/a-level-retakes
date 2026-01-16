@@ -1,0 +1,26 @@
+<!-- Related Posts Section -->
+{% set relatedPosts = collections.productPosts | rejectattr('url', 'equalto', page.url) | list %}
+{% if relatedPosts.length > 0 %}
+<section class="border-t border-gray-200 mt-12 pt-12">
+  <div class="container max-w-4xl mx-auto px-6">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for post in relatedPosts | batch(3) | first %}
+        <a href="{{ post.url }}" class="group block bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow">
+          <h3 class="font-semibold text-gray-900 group-hover:text-[color:var(--primary-color)] transition-colors mb-2">
+            {{ post.data.title }}
+          </h3>
+          <p class="text-sm text-gray-600 line-clamp-2">{{ post.data.description }}</p>
+          <span class="inline-flex items-center text-sm text-[color:var(--primary-color)] font-medium mt-3">
+            Read more
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

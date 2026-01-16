@@ -21,4 +21,21 @@ Westminster Tutors stands out as a premier independent college, renowned for its
 
 **Pathway to Top Universities:** With well over half of their students progressing to the prestigious Russell Group universities, Westminster Tutors offers a pathway to exceptional higher education opportunities. Our exceptional sixth form college provides outstanding A-level results, paving the way for future success.
 
-Whether you're striving to improve your GCSE grades or aiming to excel in A-level studies, Westminster Tutors offers unparalleled support and guidance to help you achieve your academic goals. Contact them [here](https://www.westminstertutors.co.uk/contact?utm_source=arragon-affiliates) and embark on a journey towards academic excellence and future success.
+Whether you're striving to improve your GCSE grades or aiming to excel in A-level studies, Westminster Tutors offers unparalleled support and guidance to help you achieve your academic goals. [Make an enquiry](/enquiry/) and embark on a journey towards academic excellence and future success.
+
+## Frequently Asked Questions
+
+### Can I retake my GCSEs as an adult?
+Yes, there is no age limit for retaking GCSEs. Many adults retake English and Maths GCSEs to meet career requirements or to progress to further education. Private tuition can be tailored to fit around work commitments.
+
+### Which GCSE subjects can I retake?
+You can retake any GCSE subject. The most common retakes are English Language, English Literature, and Mathematics, as these are often required for further education and employment.
+
+### Can I retake GCSEs while studying A-Levels?
+Yes, many students retake GCSEs in Maths or English while simultaneously starting their A-Level courses. Flexible timetabling allows you to fit GCSE retake preparation alongside your A-Level studies.
+
+### When can I retake my GCSEs?
+GCSE retakes are available in November (for English and Maths) and in the May/June exam series for all subjects. Your study plan will be tailored to the exam series that best suits your goals.
+
+### What grade do I need in GCSE English and Maths?
+Most sixth forms, colleges, and employers require at least a grade 4 (standard pass) in English and Maths. Some universities and competitive courses may require a grade 5 or higher.

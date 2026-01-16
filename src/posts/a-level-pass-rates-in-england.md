@@ -4,7 +4,7 @@ description: A Level Results Trends, Statistics & COVID-19 Impact
 date: 2025-03-01
 type: article
 tags:
-  - blog
+  - resource
 ---
 ## **A-Level Pass Rates in England (2019-2023): Trends, Statistics & COVID-19 Impact**
 

@@ -55,6 +55,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/android-chrome-192x192.png");
   eleventyConfig.addPassthroughCopy("./src/android-chrome-512x512.png");
 
+  // Copy robots.txt to route of /_site
+  eleventyConfig.addPassthroughCopy("./src/robots.txt");
+
+  // Copy _redirects for Netlify
+  eleventyConfig.addPassthroughCopy("./src/_redirects");
+
   // Minify HTML
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
@@ -74,8 +80,37 @@ module.exports = function (eleventyConfig) {
     return collectionApi.getFilteredByTags("article");
   });
 
-  eleventyConfig.addCollection("blogPosts", function(collectionApi) {
-    return collectionApi.getFilteredByTags("blog");
+  eleventyConfig.addCollection("resourcePosts", function(collectionApi) {
+    return collectionApi.getFilteredByTags("resource");
+  });
+
+  // Computed permalinks based on tags
+  eleventyConfig.addGlobalData("eleventyComputed", {
+    permalink: (data) => {
+      // Skip if permalink is already set or if it's not a post
+      if (data.permalink || !data.page || !data.page.inputPath) {
+        return data.permalink;
+      }
+
+      // Only apply to posts folder
+      if (!data.page.inputPath.includes('/posts/')) {
+        return data.permalink;
+      }
+
+      const slug = data.page.fileSlug;
+
+      // Resource posts go to /resources/slug/
+      if (data.tags && data.tags.includes('resource')) {
+        return `/resources/${slug}/`;
+      }
+
+      // Article posts go to /slug/ (root level)
+      if (data.tags && data.tags.includes('article')) {
+        return `/${slug}/`;
+      }
+
+      return data.permalink;
+    }
   });
 
   // Let Eleventy transform HTML files as nunjucks

@@ -2,19 +2,43 @@
 
 <div class="bg-gray-50 flex items-center mb-8">
 	<section
-		class="w-full bg-cover bg-center py-32"
-		style="background-image: url('{{ hero[0].data.image }}');"
+		class="w-full bg-cover bg-center py-32 relative"
+		style="background-image: linear-gradient(rgba(11, 51, 111, 0.85), rgba(11, 51, 111, 0.75)), url('{{ hero[0].data.image }}');"
 	>
-		<div class="container mx-auto text-center text-white">
-			<h1 class="text-5xl font-medium mb-6">{{ hero[0].data.title }}</h1>
-			<p class="text-xl mb-12">{{ hero[0].data.description }}</p>
-			<a
-				target="_blank"
-				rel="noopener"
-				href="{{ hero[0].data.buttonUrl }}"
-				class="bg-[color:var(--primary-color)] text-white py-4 px-12 rounded-full hover:bg-[color:var(--primary-hover)]">
-				{{ hero[0].data.buttonText }}
-			</a>
+		<div class="container mx-auto text-center text-white relative z-10">
+			<span class="text-sm uppercase tracking-widest mb-4 block opacity-90">Trusted Excellence in Education</span>
+			<h1 class="text-5xl lg:text-6xl font-bold mb-6">{{ hero[0].data.title }}</h1>
+			<p class="text-xl mb-8 max-w-2xl mx-auto">{{ hero[0].data.description }}</p>
+
+			<!-- Dual CTAs -->
+			<div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+				<a
+					href="{{ hero[0].data.buttonUrl }}"
+					class="bg-white text-[color:var(--primary-color)] py-4 px-10 rounded-full hover:bg-gray-100 font-semibold transition-all shadow-lg">
+					{{ hero[0].data.buttonText }}
+				</a>
+				<a
+					href="/a-level-retakes/"
+					class="border-2 border-white text-white py-4 px-10 rounded-full hover:bg-white hover:text-[color:var(--primary-color)] font-semibold transition-all">
+					Learn More
+				</a>
+			</div>
+
+			<!-- Trust Stats Row -->
+			<div class="flex flex-wrap justify-center gap-8 lg:gap-16 pt-8 border-t border-white/20">
+				<div class="text-center">
+					<span class="text-4xl font-bold block">80%</span>
+					<span class="text-sm opacity-80">A*-B Grades (2024)</span>
+				</div>
+				<div class="text-center">
+					<span class="text-4xl font-bold block">77%</span>
+					<span class="text-sm opacity-80">Russell Group</span>
+				</div>
+				<div class="text-center">
+					<span class="text-4xl font-bold block">88%</span>
+					<span class="text-sm opacity-80">First Choice University</span>
+				</div>
+			</div>
 		</div>
 	</section>
 </div>

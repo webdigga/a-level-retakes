@@ -7,16 +7,35 @@
 :root {
   --primary-color: #0b336f;
   --primary-hover: #08224a;
+  --primary-light: #1a4a8f;
+  --secondary-color: #6B4423;
+  --accent-gold: #C9A227;
+  --trust-green: #2E7D32;
+  --background-cream: #FDF8F3;
   --affiliate-color: #FFD814;
   --affiliate-hover: #F7CA00;
 }
 
+/* Base typography */
+body {
+  @apply font-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading;
+}
+
 h1 {
-  @apply text-4xl tracking-tighter mb-3 text-center lg:text-7xl;
+  @apply text-4xl tracking-tight mb-3 text-center lg:text-7xl;
 }
 
 h3 {
   @apply text-2xl font-bold mb-3;
+}
+
+/* Prose headings for article content */
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply font-heading;
 }
 
 /* Syntax Highlighting*/
@@ -36,11 +55,6 @@ body pre[class*="language-"] {
 	}
 }
 
-@media (min-width: 1024px) {
-	.article-content {
-		width: 848px;
-	}
-}
 
 /* To stop flicker after deferring Alpine JS */
 [x-cloak] { display: none !important; }

@@ -54,9 +54,71 @@
 
     <meta name="og:site_name" property="og:site_name" content="{{ settings.title }}">
 	<meta name="twitter:site" content="{{ settings.title }}">
-    <meta name="og:locale" property="og:locale" content="en_GB">  
+    <meta name="og:locale" property="og:locale" content="en_GB">
+    <meta property="og:url" content="{{ settings.url }}{{ page.url }}">
+
+    <!-- Open Graph & Twitter Images -->
+    <meta property="og:image" content="{{ settings.url }}/static/img/og-image.jpg">
+    <meta name="twitter:image" content="{{ settings.url }}/static/img/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ settings.url }}{{ page.url }}">
 
     <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+
+    <!-- Google Fonts - Playfair Display for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- JSON-LD Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "{{ settings.siteName }}",
+      "description": "{{ settings.description }}",
+      "url": "{{ settings.url }}",
+      "logo": "{{ settings.url }}{{ settings.logoUrl }}",
+      "sameAs": [
+        "https://www.linkedin.com/company/arragon-digital-limited",
+        "https://www.facebook.com/arragondigitalandaffiliates/"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "serviceType": ["A-Level Retakes", "GCSE Retakes", "Private Tuition", "Exam Preparation"]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data - WebSite with SearchAction -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "{{ settings.siteName }}",
+      "url": "{{ settings.url }}",
+      "description": "{{ settings.description }}",
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ settings.siteName }}",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "{{ settings.url }}{{ settings.logoUrl }}"
+        }
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "{{ settings.url }}/resources/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
 	{% if env.isProd %}
 		<script>

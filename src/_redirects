@@ -1,0 +1,25 @@
+# Redirect old blog URLs to resources
+/blog/*  /resources/:splat  301
+/blog/   /resources/        301
+
+# Redirect old /posts/ article URLs to root
+/posts/a-level-retakes/           /a-level-retakes/           301
+/posts/a-level-courses/           /a-level-courses/           301
+/posts/a-level-results-day/       /a-level-results-day/       301
+/posts/gcse-retakes/              /gcse-retakes/              301
+/posts/private-tuition/           /private-tuition/           301
+/posts/private-a-level-candidates/ /private-a-level-candidates/ 301
+/posts/privacy-policy/            /privacy-policy/            301
+
+# Redirect old /posts/ resource URLs to /resources/
+/posts/10-proven-revision-techniques/        /resources/10-proven-revision-techniques/        301
+/posts/creating-revision-timetable/          /resources/creating-revision-timetable/          301
+/posts/ucas-clearing-guide/                  /resources/ucas-clearing-guide/                  301
+/posts/gap-year-vs-retakes/                  /resources/gap-year-vs-retakes/                  301
+/posts/what-to-do-if-results-lower-than-expected/ /resources/what-to-do-if-results-lower-than-expected/ 301
+/posts/managing-exam-anxiety/                /resources/managing-exam-anxiety/                301
+/posts/a-level-pass-rates-in-england/        /resources/a-level-pass-rates-in-england/        301
+
+# Redirect old first-blog URL
+/posts/first-blog/  /resources/a-level-results-day-guide/  301
+/posts/a-level-results-day-guide/  /resources/a-level-results-day-guide/  301

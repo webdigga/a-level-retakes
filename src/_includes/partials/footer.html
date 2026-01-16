@@ -1,48 +1,91 @@
-<footer class="bg-neutral-50 bottom-0 flex flex-col items-center text-center w-full py-5 clear-right border-t border-solid border-top-gray-100 mt-6">
+<footer class="bg-[color:var(--primary-color)] text-white">
 
-  <p class="pb-1">
-    <small class="text-gray-500">
-      © {{ helpers.currentYear() }} <a href="{{ settings.poweredByOneUrl }}" target="_blank" rel="noopener" class="underline">{{ settings.poweredByOne }}</a> & <a href="{{ settings.poweredByTwoUrl }}" target="_blank" rel="noopener" class="underline">{{ settings.poweredByTwo }}</a>. All rights reserved.
-    </small>
-  </p>
+  <!-- Main Footer Content -->
+  <div class="container mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-  <p class="flex items-center">
-    <span class="[&>svg]:h-5 [&>svg]:w-5">
-      <a
-        href="https://www.linkedin.com/company/arragon-digital-limited"
-        target="_blank"
-        rel="noopener">
-        <svg
-          width="20px"
-          height="20px"
-          xmlns="http://www.w3.org/2000/svg"
-          class="fill-current text-gray-500"
-          viewBox="0 0 448 512">
-          <title>LinkedIn</title>
-          <path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-        </svg>
-      </a>
-    </span>
+      <!-- About Section -->
+      <div>
+        <div class="flex items-center mb-4">
+          <img src="{{ settings.logoUrl }}" alt="{{ settings.logoAlt }}" width="50" height="50" class="mr-3 bg-white rounded p-1" />
+          <span class="text-xl font-bold">{{ settings.siteName }}</span>
+        </div>
+        <p class="text-gray-300 text-sm leading-relaxed">
+          Your trusted resource for A-Level and GCSE retake information. Helping students achieve their academic goals with expert guidance and proven results.
+        </p>
+      </div>
 
-    <span class="pl-1 pr-0.5 text-gray-500">|</span>
+      <!-- Retakes & Courses -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 border-b border-white/20 pb-2">Retakes & Courses</h3>
+        <ul class="space-y-2">
+          <li><a href="/a-level-retakes/" class="text-gray-300 hover:text-white transition-colors">A-Level Retakes</a></li>
+          <li><a href="/gcse-retakes/" class="text-gray-300 hover:text-white transition-colors">GCSE Retakes</a></li>
+          <li><a href="/a-level-courses/" class="text-gray-300 hover:text-white transition-colors">A-Level Courses</a></li>
+          <li><a href="/private-tuition/" class="text-gray-300 hover:text-white transition-colors">Private Tuition</a></li>
+        </ul>
+      </div>
 
-    <span class="[&>svg]:h-5 [&>svg]:w-5">
-      <a
-        href="https://www.facebook.com/arragondigitalandaffiliates/"
-        target="_blank"
-        rel="noopener">
-        <svg
-          width="20px"
-          height="20px"
-          xmlns="http://www.w3.org/2000/svg"
-          class="fill-current text-gray-500"
-          viewBox="0 0 320 512">
-          <title>Facebook</title>
-          <path
-            d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
-        </svg>
-      </a>
-    </span>
-  </p>
+      <!-- Useful Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 border-b border-white/20 pb-2">Useful Links</h3>
+        <ul class="space-y-2">
+          <li><a href="/a-level-results-day/" class="text-gray-300 hover:text-white transition-colors">Results Day Guide</a></li>
+          <li><a href="/resources/" class="text-gray-300 hover:text-white transition-colors">Resources</a></li>
+          <li><a href="/faq/" class="text-gray-300 hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="/enquiry/" class="text-gray-300 hover:text-white transition-colors">Make an Enquiry</a></li>
+          <li><a href="/privacy-policy/" class="text-gray-300 hover:text-white transition-colors">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & CTA -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4 border-b border-white/20 pb-2">Get Started</h3>
+        <p class="text-gray-300 text-sm mb-4">Ready to improve your grades? Get in touch today.</p>
+        <a href="/enquiry/" class="inline-block bg-white text-[color:var(--primary-color)] px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all">
+          Make an Enquiry
+        </a>
+
+        <!-- Social Links -->
+        <div class="flex items-center gap-4 mt-6">
+          <a
+            href="https://www.linkedin.com/company/arragon-digital-limited"
+            target="_blank"
+            rel="noopener"
+            class="text-gray-300 hover:text-white transition-colors">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 448 512">
+              <title>LinkedIn</title>
+              <path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/arragondigitalandaffiliates/"
+            target="_blank"
+            rel="noopener"
+            class="text-gray-300 hover:text-white transition-colors">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 320 512">
+              <title>Facebook</title>
+              <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-white/20">
+    <div class="container mx-auto px-6 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
+        <p>
+          © {{ helpers.currentYear() }} <a href="{{ settings.poweredByOneUrl }}" target="_blank" rel="noopener" class="underline hover:text-white">{{ settings.poweredByOne }}</a> & <a href="{{ settings.poweredByTwoUrl }}" target="_blank" rel="noopener" class="underline hover:text-white">{{ settings.poweredByTwo }}</a>. All rights reserved.
+        </p>
+        <p class="mt-2 md:mt-0">
+          Helping students achieve their academic potential
+        </p>
+      </div>
+    </div>
+  </div>
 
 </footer>

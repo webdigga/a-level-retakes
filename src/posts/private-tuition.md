@@ -13,4 +13,21 @@ They also provide specialized preparation for competitive degree courses such as
 
 At Westminster Tutors, their commitment to delivering exceptional one-to-one teaching ensures that each student receives personalized attention and achieves their academic goals.
 
-You can find list of their A-Level and A-Level Retake courses [here](/posts/a-level-courses/).
+You can find list of their A-Level and A-Level Retake courses [here](/a-level-courses/).
+
+## Frequently Asked Questions
+
+### What is private tuition?
+Private tuition is one-to-one teaching tailored specifically to your needs, pace, and learning style. Unlike classroom teaching, every session focuses entirely on your progress and goals.
+
+### What subjects can I get private tuition in?
+Private tuition is available in all A-Level and GCSE subjects, as well as university-level subjects. Specialised preparation for Oxbridge and Medicine applications is also available.
+
+### How are tutors selected?
+All tutors are highly qualified specialists in their subjects. They are selected for their expertise, teaching ability, and passion for helping students succeed.
+
+### Can I fit private tuition around my schedule?
+Yes, sessions can be scheduled at times that suit you, including evenings and weekends. This flexibility makes private tuition ideal for students with other commitments.
+
+### Is private tuition available online?
+Both in-person and online tuition options are available. Online sessions use video conferencing and shared whiteboards to provide an effective learning experience from anywhere.

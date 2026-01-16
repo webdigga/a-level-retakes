@@ -1,8 +1,8 @@
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow flex flex-col">
-    
-	<a href="{{ productCard.data.articleLink }}">
+<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-md flex flex-col hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+
+	<a href="{{ productCard.data.articleLink }}" class="overflow-hidden">
 		<img
-			class="rounded-t-lg max-h-fit"
+			class="rounded-t-lg max-h-fit w-full object-cover group-hover:scale-105 transition-transform duration-300"
 			src="{{ productCard.data.image }}"
 			alt="{{ productCard.data.imageAlt }}"
 			width="640"
@@ -10,25 +10,25 @@
 			loading="lazy"
 		/>
 	</a>
-	
-	<div class="p-5  flex flex-col grow">
-		<a href="{{ productCard.data.articleLink }}">
-			<h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ productCard.data.title }}</h2>
-		</a>
-		<p class="mb-3 font-normal text-gray-700 grow">{{ productCard.data.description }}</p>
 
-		<div class="flex justify-between">
+	<div class="p-6 flex flex-col grow border-t-4 border-[color:var(--primary-color)]">
+		<a href="{{ productCard.data.articleLink }}">
+			<h2 class="mb-3 text-xl font-bold tracking-tight text-gray-900 group-hover:text-[color:var(--primary-color)] transition-colors">{{ productCard.data.title }}</h2>
+		</a>
+		<p class="mb-4 font-normal text-gray-600 grow leading-relaxed">{{ productCard.data.description }}</p>
+
+		<div class="flex justify-between items-center pt-4 border-t border-gray-100">
 			{% if productCard.data.articleLink %}
 				<a
 					href="{{ productCard.data.articleLink }}"
-					class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[color:var(--primary-color)] rounded-lg hover:bg-[color:var(--primary-hover)] focus:ring-4 focus:outline-none focus:ring-blue-300 self-start mt-auto">
-					Read more
+					class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-center text-white bg-[color:var(--primary-color)] rounded-full hover:bg-[color:var(--primary-hover)] transition-all">
+					Learn more
 					<svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
 						<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
 					</svg>
 				</a>
 			{% endif %}
 		</div>
-		
+
 	</div>
 </div>

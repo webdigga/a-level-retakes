@@ -1,6 +1,8 @@
 ---
 layout: default
 path: home
+title: A-Level & GCSE Retakes | Expert Guidance for Better Results
+description: Improve your A-Level and GCSE grades with expert retake courses and private tuition. Proven results with 80% A*-B grades and 77% Russell Group placements in 2024.
 ---
 
 {% include "./_includes/components/hero.html" %}
@@ -10,11 +12,18 @@ path: home
   {% include "./_includes/components/homepageSpiel.html" %}
 
   <!-- Product cards -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-4 lg:mx-0">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:mx-0 mb-8">
 	{% set productCardList = collections.productCard %}
 
     {% for productCard in productCardList | sort(false, true, 'data.order') %}
 		{% include "./_includes/components/product-card.html" %}
     {% endfor %}
   </div>
+
 </div>
+
+{% include "./_includes/components/testimonials.html" %}
+
+{% include "./_includes/components/resources-preview.html" %}
+
+{% include "./_includes/components/cta-banner.html" %}

@@ -2,81 +2,508 @@
 layout: default
 ---
 
-{% if heroImage %}
-<div
-	class="w-full bg-cover bg-center py-56"
-	style="background-image: url('{{ heroImage }}');">
+{% if 'resource' in tags or 'article' in tags %}
+<!-- JSON-LD Article Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "datePublished": "{{ date.toISOString() }}",
+  "dateModified": "{{ date.toISOString() }}",
+  "author": {
+    "@type": "Organization",
+    "name": "A-Level Retakes"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "A-Level Retakes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ settings.url }}{{ settings.logoUrl }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ settings.url }}{{ page.url }}"
+  },
+  "image": "{{ settings.url }}/static/img/og-image.jpg"
+}
+</script>
+
+<!-- JSON-LD BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ settings.url }}/"
+    }{% if 'resource' in tags %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "{{ settings.url }}/resources/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ title }}",
+      "item": "{{ settings.url }}{{ page.url }}"
+    }{% else %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ title }}",
+      "item": "{{ settings.url }}{{ page.url }}"
+    }{% endif %}
+  ]
+}
+</script>
+{% endif %}
+
+{# Course Schema for course pages #}
+{% if page.url == '/a-level-courses/' or page.url == '/a-level-retakes/' or page.url == '/gcse-retakes/' %}
+<!-- JSON-LD Course Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "{{ title }}",
+  "description": "{{ description }}",
+  "provider": {
+    "@type": "Organization",
+    "name": "{{ settings.siteName }}",
+    "url": "{{ settings.url }}"
+  },
+  "educationalLevel": "{% if 'GCSE' in title %}Secondary Education{% else %}Advanced Level (A-Level){% endif %}",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student",
+    "audienceType": "{% if 'Retake' in title %}Students retaking exams{% else %}A-Level students{% endif %}"
+  },
+  "coursePrerequisites": "{% if 'GCSE' in title %}Previous GCSE attempt{% else %}GCSE qualifications{% endif %}",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "onsite",
+    "locationCreated": {
+      "@type": "Place",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "UK"
+      }
+    }
+  },
+  "image": "{{ settings.url }}/static/img/og-image.jpg"
+}
+</script>
+{% endif %}
+
+{# FAQPage Schema for results day page #}
+{% if page.url == '/a-level-results-day/' %}
+<!-- JSON-LD FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When is A-Level Results Day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A-Level results day typically falls on the third Thursday of August each year. Results are released at 8am and cannot be accessed prior to this time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I receive my A-Level results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most schools and colleges will email results to students on the morning. However, you may also have the option to collect a paper copy in person or request a phone call from your school or college."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't get the A-Level grades I expected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you feel you've narrowly missed your target grades or suspect errors in marking, you can access post-results services offered by exam boards. These include requesting a priority copy of your marked paper or opting for a review of marking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the A-Level appeals process work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you're dissatisfied with the outcome of a review of marking, you can appeal the decision with the exam board. Appeals must be submitted through your school or college, so communicate promptly with your exams officer if you believe an appeal is necessary."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens with UCAS on results day?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UCAS Track opens at 8am on results day, allowing you to check the status of your university applications. You should carefully review your application status, contact your chosen university if you have questions, and explore Clearing options if necessary."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{# FAQPage Schema for A-Level Retakes #}
+{% if page.url == '/a-level-retakes/' %}
+<!-- JSON-LD FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I retake my A-Levels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can retake your A-Levels. Students typically retake during the next available examination series - either in May/June or October/November. You can retake individual subjects or multiple A-Levels depending on your goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When are A-Level retakes available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A-Level retakes are available in two main examination series: May/June and October/November. The October/November series is popular for students who received their results in August and want to retake quickly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will universities accept A-Level retakes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most universities accept A-Level retakes. In fact, 77% of retake students secure places at Russell Group universities. Some competitive courses may have specific policies, so it's worth checking with your target universities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to prepare for an A-Level retake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Preparation time varies depending on your starting point and target grade. Some students prepare in a few months for the next exam series, while others take a full academic year for comprehensive preparation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I register for A-Level retakes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can register through a school, college, or as a private candidate through an exam centre. Making an enquiry is the first step to get guidance on the registration process and deadlines."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{# FAQPage Schema for A-Level Courses #}
+{% if page.url == '/a-level-courses/' %}
+<!-- JSON-LD FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What subjects are available for A-Level courses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A wide range of subjects are available including Sciences (Biology, Chemistry, Physics), Mathematics, English, Humanities (History, Politics, Philosophy), Languages (French, German, Spanish, Latin), Social Sciences (Economics, Psychology, Sociology), and the Arts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I study any combination of subjects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, courses are individually designed so any combination of subjects is possible. This flexibility allows students to tailor their studies to their university and career goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many A-Levels should I study?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical A-Level student studies three subjects over two years. However, ambitious students can take a fourth A-Level or add an EPQ (Extended Project Qualification) to strengthen their university applications."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What exam boards are covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All major exam boards are covered, including AQA, Edexcel, OCR, and WJEC. Courses can be tailored to your specific exam board requirements."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are courses taught one-to-one or in groups?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both options are available. Courses can be taught one-to-one for fully personalised learning, or in very small groups. The approach is tailored to your learning preferences and goals."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{# FAQPage Schema for GCSE Retakes #}
+{% if page.url == '/gcse-retakes/' %}
+<!-- JSON-LD FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I retake my GCSEs as an adult?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, there is no age limit for retaking GCSEs. Many adults retake English and Maths GCSEs to meet career requirements or to progress to further education. Private tuition can be tailored to fit around work commitments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which GCSE subjects can I retake?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can retake any GCSE subject. The most common retakes are English Language, English Literature, and Mathematics, as these are often required for further education and employment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retake GCSEs while studying A-Levels?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, many students retake GCSEs in Maths or English while simultaneously starting their A-Level courses. Flexible timetabling allows you to fit GCSE retake preparation alongside your A-Level studies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When can I retake my GCSEs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GCSE retakes are available in November (for English and Maths) and in the May/June exam series for all subjects. Your study plan will be tailored to the exam series that best suits your goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What grade do I need in GCSE English and Maths?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most sixth forms, colleges, and employers require at least a grade 4 (standard pass) in English and Maths. Some universities and competitive courses may require a grade 5 or higher."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{# FAQPage Schema for Private Tuition #}
+{% if page.url == '/private-tuition/' %}
+<!-- JSON-LD FAQPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is private tuition?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Private tuition is one-to-one teaching tailored specifically to your needs, pace, and learning style. Unlike classroom teaching, every session focuses entirely on your progress and goals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What subjects can I get private tuition in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Private tuition is available in all A-Level and GCSE subjects, as well as university-level subjects. Specialised preparation for Oxbridge and Medicine applications is also available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are tutors selected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All tutors are highly qualified specialists in their subjects. They are selected for their expertise, teaching ability, and passion for helping students succeed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I fit private tuition around my schedule?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, sessions can be scheduled at times that suit you, including evenings and weekends. This flexibility makes private tuition ideal for students with other commitments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is private tuition available online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both in-person and online tuition options are available. Online sessions use video conferencing and shared whiteboards to provide an effective learning experience from anywhere."
+      }
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{# Service Schema for private tuition #}
+{% if page.url == '/private-tuition/' %}
+<!-- JSON-LD Service Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ title }}",
+  "description": "{{ description }}",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "{{ settings.siteName }}",
+    "url": "{{ settings.url }}"
+  },
+  "serviceType": "Private Tuition",
+  "areaServed": {
+    "@type": "Country",
+    "name": "United Kingdom"
+  },
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Private Tuition Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "One-to-One A-Level Tuition"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "One-to-One GCSE Tuition"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Oxbridge Preparation"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Medicine Application Support"
+        }
+      }
+    ]
+  },
+  "image": "{{ settings.url }}/static/img/og-image.jpg"
+}
+</script>
+{% endif %}
+
+<!-- Page Header -->
+{% if 'resource' in tags %}
+{# Resource posts get the full header treatment #}
+<div class="bg-gradient-to-br from-[color:var(--primary-color)] to-[#1a4a8f] text-white py-12 lg:py-16">
+	<div class="container mx-auto px-6 xl:max-w-5xl">
+		<div class="flex items-center justify-center gap-3 mb-4">
+			<span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">Resource</span>
+			<time class="text-white/70 text-sm">{{ date | readableDate }}</time>
+		</div>
+		<h1 class="font-bold text-3xl lg:text-5xl mb-4">{{ title }}</h1>
+		{% if description %}
+		<p class="text-lg lg:text-xl text-white/80 max-w-3xl mx-auto text-center">{{ description }}</p>
+		{% endif %}
+	</div>
+</div>
+{% else %}
+{# Articles get a compact header with breadcrumb style #}
+<div class="bg-gradient-to-br from-[color:var(--primary-color)] to-[#1a4a8f] text-white py-10 lg:py-12">
+	<div class="container mx-auto px-6 xl:max-w-5xl">
+		<nav class="text-sm text-white/60 mb-3">
+			<a href="/" class="hover:text-white transition-colors">Home</a>
+			<span class="mx-2">/</span>
+			<span class="text-white/80">{{ title }}</span>
+		</nav>
+		<h1 class="font-bold text-3xl lg:text-4xl">{{ title }}</h1>
+	</div>
 </div>
 {% endif %}
 
-<div class="container 2xl:max-w-6xl mt-6 px-6 flex flex-col lg:flex-row justify-center">
+<div class="container mx-auto px-6 xl:max-w-5xl mt-8 flex flex-col lg:flex-row justify-center">
 
-	<div class="lg:pr-8 article-content">
-		<div class="pb-5 mb-5 border-b border-gray-100 flex flex-col md:flex-row md:justify-between {% if 'blog' in tags %}md:items-end{% endif %}">
-			<h1 class="font-bold text-5xl text-left inline-block mb-5 md:mb-0">{{ title }}</h1>
-
-			{% if 'blog' in tags %}
-				<time class="text-gray-500 text-sm italic block md:text-right min-w-28">
-					{{ date | readableDate }}
-				</time>
-			{% endif %}
-		</div>
-	
-		<article class="prose my-4 max-w-none flex flex-col md:block">
+	<div class="lg:pr-8 article-content w-full">
+		<article class="prose prose-lg max-w-none">
 	
 			{{ content | safe }}
-
-      {% if ctaUrl and 'privacy' not in tags %}
-        <div class="flex justify-end">
-          <a
-            target="_blank"
-            rel="noopener"
-            href="{{ ctaUrl }}"
-            class="bg-[color:var(--primary-color)] text-white py-4 px-12 rounded-full hover:bg-[color:var(--primary-hover)] no-underline">
-            {{ ctaText }}
-          </a>
-        </div>
-      {% endif %}
 
 		</article>
 
 		<!-- Highlight boxes -->
         {% if highlightsBoxes[0] %}
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-3 my-5 lg:mx-0">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
                 {% for highlightsBox in highlightsBoxes %}
-                    <div class="bg-white border border-gray-200 rounded-lg shadow flex flex-col">
+                    <div class="group bg-white rounded-xl shadow-sm hover:shadow-lg border border-gray-100 overflow-hidden transition-all duration-300">
+                        {# Colored top accent bar #}
+                        <div class="h-1.5 bg-gradient-to-r from-[color:var(--primary-color)] to-[#1a4a8f]"></div>
 
-                        <div class="p-5 flex flex-col grow">
+                        <div class="p-6">
                             {% if highlightsBox.title %}
-                                <h2 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 pb-2 border-b border-gray-200">
-									{{ highlightsBox.title }}
-								</h2>
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-10 h-10 rounded-lg bg-[color:var(--primary-color)]/10 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-[color:var(--primary-color)]">
+                                            <path d="M11.7 2.805a.75.75 0 0 1 .6 0A60.65 60.65 0 0 1 22.83 8.72a.75.75 0 0 1-.231 1.337 49.948 49.948 0 0 0-9.902 3.912l-.003.002-.34.18a.75.75 0 0 1-.707 0A50.88 50.88 0 0 0 7.5 12.173v-.224c0-.131.067-.248.172-.311a54.615 54.615 0 0 1 4.653-2.52.75.75 0 0 0-.65-1.352 56.123 56.123 0 0 0-4.78 2.589 1.858 1.858 0 0 0-.859 1.228 49.803 49.803 0 0 0-4.634-1.527.75.75 0 0 1-.231-1.337A60.653 60.653 0 0 1 11.7 2.805Z" />
+                                            <path d="M13.06 15.473a48.45 48.45 0 0 1 7.666-3.282c.134 1.414.22 2.843.255 4.284a.75.75 0 0 1-.46.711 47.87 47.87 0 0 0-8.105 4.342.75.75 0 0 1-.832 0 47.87 47.87 0 0 0-8.104-4.342.75.75 0 0 1-.461-.71c.035-1.442.121-2.87.255-4.286.921.304 1.83.634 2.726.99v1.27a1.5 1.5 0 0 0-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.66a6.727 6.727 0 0 0 .551-1.607 1.5 1.5 0 0 0 .14-2.67v-.645a48.549 48.549 0 0 1 3.44 1.667 2.25 2.25 0 0 0 2.12 0Z" />
+                                            <path d="M4.462 19.462c.42-.419.753-.89 1-1.395.453.214.902.435 1.347.662a6.742 6.742 0 0 1-1.286 1.794.75.75 0 0 1-1.06-1.06Z" />
+                                        </svg>
+                                    </div>
+                                    <h3 class="text-lg font-bold text-gray-900">{{ highlightsBox.title }}</h3>
+                                </div>
                             {% endif %}
 
                             {% if highlightsBox.highlightsListItem[0] %}
-                                <ul>
+                                <div class="flex flex-wrap gap-2">
                                     {% for highlight in highlightsBox.highlightsListItem %}
-                                        <li class="mb-3 last:mb-0 first:mt-3 font-normal text-gray-700 grow flex items-center">
-                                            <span>
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													viewBox="0 0 24 24"
-													fill="var(--primary-color)"
-													class="w-6 h-6">
-													<path
-														fill-rule="evenodd"
-														d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm4.28 10.28a.75.75 0 0 0 0-1.06l-3-3a.75.75 0 1 0-1.06 1.06l1.72 1.72H8.25a.75.75 0 0 0 0 1.5h5.69l-1.72 1.72a.75.75 0 1 0 1.06 1.06l3-3Z"
-														clip-rule="evenodd"
-													/>
-												</svg>
-                                            </span>
-
-											<span class="ml-2">{{ highlight.highlight }}</span>
-                                        </li>
+                                        <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 text-sm rounded-full border border-gray-200 hover:border-[color:var(--primary-color)] hover:bg-[color:var(--primary-color)]/5 transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 text-[color:var(--primary-color)]">
+                                                <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd" />
+                                            </svg>
+                                            {{ highlight.highlight }}
+                                        </span>
                                     {% endfor %}
-                                </ul>
+                                </div>
                             {% endif %}
-
                         </div>
                     </div>
                 {% endfor %}
@@ -84,3 +511,20 @@ layout: default
         {% endif %}
 	</div>
 </div>
+
+{% include "./components/related-posts.html" %}
+
+<!-- CTA Section -->
+{% if 'privacy' not in tags %}
+<section class="bg-gray-100 py-12 mt-8">
+  <div class="container mx-auto px-6 xl:max-w-4xl text-center">
+    <h2 class="text-2xl font-bold text-gray-900 mb-3">Need Personalised Advice?</h2>
+    <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+      Get guidance tailored to your specific situation and goals.
+    </p>
+    <a href="/enquiry/" class="inline-block bg-[color:var(--primary-color)] text-white px-8 py-3 rounded-full font-semibold hover:bg-[color:var(--primary-hover)] transition-all">
+      Make an Enquiry
+    </a>
+  </div>
+</section>
+{% endif %}

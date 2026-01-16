@@ -1,0 +1,91 @@
+<!-- Testimonials Section -->
+<section class="bg-gray-50 py-16 my-12">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Student Success Stories</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">Real feedback from students and parents who have achieved their academic goals.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Testimonial 1 - Parent -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+        <div class="relative h-48 overflow-hidden">
+          <img
+            src="/static/img/testimonial-1.avif"
+            alt="Parent of A-Level Retake Student"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-semibold text-white">Parent</p>
+            <p class="text-sm text-white/80">A-Level Retake Student</p>
+          </div>
+        </div>
+        <div class="p-6 flex-grow flex flex-col">
+          <div class="flex mb-3">
+            {% for i in range(5) %}
+            <svg class="w-5 h-5 text-[color:var(--accent-gold)]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            {% endfor %}
+          </div>
+          <p class="text-gray-600 italic flex-grow">"I cannot thank you enough! Arif and I are over the moon! Such a different story to when we met you last year. He is thrilled with his grades. I know that he has worked hard, but so have you and your wonderful team. Please pass on our gratitude to everyone."</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 - A-Level Student -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+        <div class="relative h-48 overflow-hidden">
+          <img
+            src="/static/img/testimonial-2.avif"
+            alt="A-Level Student"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-semibold text-white">Student</p>
+            <p class="text-sm text-white/80">A-Level Course</p>
+          </div>
+        </div>
+        <div class="p-6 flex-grow flex flex-col">
+          <div class="flex mb-3">
+            {% for i in range(5) %}
+            <svg class="w-5 h-5 text-[color:var(--accent-gold)]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            {% endfor %}
+          </div>
+          <p class="text-gray-600 italic flex-grow">"As my lessons were tailored to my pace and needs I felt very comfortable at Westminster Tutors and confident that I had the support I needed to succeed in my studies. My tutors were so lovely and clearly had a passion for their subjects, which kept me engaged throughout the course."</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 - A-Level Retake Student -->
+      <div class="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
+        <div class="relative h-48 overflow-hidden">
+          <img
+            src="/static/img/testimonial-3.avif"
+            alt="A-Level Retake Student"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="font-semibold text-white">Student</p>
+            <p class="text-sm text-white/80">A-Level Retake</p>
+          </div>
+        </div>
+        <div class="p-6 flex-grow flex flex-col">
+          <div class="flex mb-3">
+            {% for i in range(5) %}
+            <svg class="w-5 h-5 text-[color:var(--accent-gold)]" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            {% endfor %}
+          </div>
+          <p class="text-gray-600 italic flex-grow">"I would just like to say a huge thank you for everything you have helped me with this year. Not only have you helped improve my English grade, but you have also taught me so much more about life in general. I'm so thankful to have been taught by you, and to have got my firm offer at UCL!"</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

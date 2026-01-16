@@ -1,0 +1,82 @@
+---
+layout: resourceList
+---
+
+{% set resourceList = collections.resourcePosts | reverse %}
+{% set featuredPost = resourceList | first %}
+
+<!-- Featured Post -->
+{% if featuredPost %}
+<section class="mb-12">
+    <span class="text-sm font-semibold text-[color:var(--primary-color)] uppercase tracking-wider">Latest Resource</span>
+    <article class="mt-4 bg-gradient-to-br from-[color:var(--primary-color)] to-[#1a4a8f] rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+        <a href="{{ featuredPost.url | url }}" class="block p-8 lg:p-12">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">
+                    Featured
+                </span>
+                <time class="text-white/70 text-sm">{{ featuredPost.data.date | readableDate }}</time>
+            </div>
+            <h2 class="text-2xl lg:text-4xl font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
+                {{ featuredPost.data.title }}
+            </h2>
+            {% if featuredPost.data.description %}
+            <p class="text-white/80 text-lg mb-6 max-w-3xl">
+                {{ featuredPost.data.description }}
+            </p>
+            {% endif %}
+            <span class="inline-flex items-center text-white font-semibold bg-white/20 px-5 py-2 rounded-full group-hover:bg-white/30 transition-all">
+                Read article
+                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </span>
+        </a>
+    </article>
+</section>
+{% endif %}
+
+<!-- All Posts -->
+<section>
+    <h2 class="text-2xl font-bold text-gray-900 mb-8">All Resources</h2>
+
+    <div class="space-y-4">
+        {% for resource in resourceList %}
+        {% if loop.index > 1 %}
+        <article class="bg-white border border-gray-200 rounded-xl hover:border-[color:var(--primary-color)] hover:shadow-md transition-all group">
+            <a href="{{ resource.url | url }}" class="block p-6 lg:flex lg:items-center lg:gap-8">
+                <!-- Date Badge -->
+                <div class="hidden lg:flex flex-col items-center justify-center bg-gray-50 rounded-lg p-4 min-w-[80px] group-hover:bg-[color:var(--primary-color)] transition-colors">
+                    <span class="text-2xl font-bold text-[color:var(--primary-color)] group-hover:text-white transition-colors">
+                        {{ resource.data.date | readableDate | truncate(2, true, '') }}
+                    </span>
+                    <span class="text-xs text-gray-500 uppercase group-hover:text-white/80 transition-colors">
+                        {{ resource.data.date | readableDate | replace(resource.data.date | readableDate | truncate(2, true, ''), '') | truncate(4, true, '') }}
+                    </span>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-grow">
+                    <time class="text-sm text-gray-500 mb-1 block lg:hidden">{{ resource.data.date | readableDate }}</time>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-[color:var(--primary-color)] transition-colors">
+                        {{ resource.data.title }}
+                    </h3>
+                    {% if resource.data.description %}
+                    <p class="text-gray-600 line-clamp-2">
+                        {{ resource.data.description }}
+                    </p>
+                    {% endif %}
+                </div>
+
+                <!-- Arrow -->
+                <div class="hidden lg:flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 group-hover:bg-[color:var(--primary-color)] transition-colors">
+                    <svg class="w-5 h-5 text-gray-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+        </article>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>

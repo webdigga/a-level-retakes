@@ -1,10 +1,21 @@
 ---
 layout: false
-permalink: sitemap.txt
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
 ignore: true
 ---
-{%- for item in collections.all %}
-  {% if not item.data.ignore and not r/^\/admin\//i.test(item.url) %}
-    {{ env.site }}{{ item.url | replace('.html', '') }}
-  {% endif %}
-{%- endfor %}
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {%- for page in collections.all %}
+  {%- if page.url and not page.data.eleventyExcludeFromCollections and not page.data.ignore %}
+  <url>
+    <loc>{{ settings.url }}{{ page.url }}</loc>
+    {%- if page.date %}
+    <lastmod>{{ page.date.toISOString() }}</lastmod>
+    {%- endif %}
+    <changefreq>{% if page.url == "/" %}weekly{% else %}monthly{% endif %}</changefreq>
+    <priority>{% if page.url == "/" %}1.0{% elif "/resources/" in page.url %}0.8{% else %}0.9{% endif %}</priority>
+  </url>
+  {%- endif %}
+  {%- endfor %}
+</urlset>

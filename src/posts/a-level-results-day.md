@@ -1,5 +1,5 @@
 ---
-title: A-level Results Day
+title: A-Level Results Day
 description: Your Questions Answered
 date: 2024-03-11T11:28:32.363Z
 type: article
@@ -7,28 +7,41 @@ tags:
   - article
 heroImage: /static/img/exam-results-day-large.webp
 ---
-At Westminster Tutors, their foremost aim is to support each of their sixth form students in achieving their highest academic potential. This commitment is reflected in the outstanding A-level results achieved by their students, with an impressive average of 65% achieving A\*-A grades and 87% achieving A\*-B grades.
+A-Level results day is a significant milestone for students across the UK. Here's everything you need to know about what to expect and how to prepare.
 
-On A-level results day, which this year falls on Thursday, August 15, 2024, their priority is to guide our students through the process and assist them in making informed decisions based on their results. Here's what you can expect:
+## When is A-Level Results Day?
 
-**Timing of A-level Results Release:**
+A-Level results day typically falls on the third Thursday of August each year. Results are released at 8am and cannot be accessed prior to this time.
 
-Results will be available to students promptly at 8 am. Please note that results cannot be accessed prior to this time, so we kindly request that students refrain from attempting to inquire earlier.
+## How to Receive Your Results
 
-**How to Receive Results:**
+Most schools and colleges will email results to students on the morning. However, you may also have the option to:
+- Collect a paper copy in person
+- Request a phone call from your school or college
 
-They will email all our sixth form students their statements of results. However, students have the option to request a phone call instead or collect a paper copy of their results in person from our college premises. For any specific requests regarding the delivery of results, please contact Jason, the Exams Officer.
+Contact your school or college's exams officer if you have specific requests about how you'd like to receive your results.
 
-**Post-Results Services:**
+## What If You Don't Get the Grades You Expected?
 
-If students feel they have narrowly missed their target grades or suspect errors in marking, they may avail of post-results services offered by exam boards. These services include requesting a priority copy of a marked paper or opting for a review of marking. The Exams Officer, Jason, can provide guidance on the process and deadlines for such requests.
+If you feel you've narrowly missed your target grades or suspect errors in marking, you can access post-results services offered by exam boards. These include:
+- Requesting a priority copy of your marked paper
+- Opting for a review of marking
 
-**Appeals Process:**
+Your school or college's exams officer can guide you through the process and deadlines.
 
-In the event of dissatisfaction with the outcome of a review of marking, students have the option to appeal the decision with the exam board. Their college is responsible for submitting appeals on behalf of all their students, and encourage prompt communication with the Exams Officer should an appeal be necessary.
+## Appeals Process
 
-**UCAS Application and Clearing:**
+If you're dissatisfied with the outcome of a review of marking, you can appeal the decision with the exam board. Appeals must be submitted through your school or college, so communicate promptly with your exams officer if you believe an appeal is necessary.
 
-UCAS Track, where students can check the status of their university applications, will also open at 8 am on August 17, 2023. It's essential to carefully review application statuses and explore options available through Clearing if necessary. Our Director of Studies, Virginia, is available to provide guidance and support throughout this process.
+## UCAS and University Places
 
-At Westminster Tutors, they understand the significance of A-level results day and are dedicated to providing their students with the assistance and encouragement they need to navigate this pivotal moment in their academic journey. They encourage students to reach out to us for any assistance or advice they may require, and they are there to ensure a smooth and successful transition to the next phase of their education.
+UCAS Track opens at 8am on results day, allowing you to check the status of your university applications. It's essential to:
+- Carefully review your application status
+- Contact your chosen university if you have questions
+- Explore Clearing options if necessary
+
+## Need Support?
+
+Results day can be stressful, but remember that there are always options available whatever your results. If you're considering retaking your A-Levels to improve your grades, expert advice is available to help you understand your options.
+
+[Make an enquiry](/enquiry/) to speak with a specialist advisor about A-Level retakes.

@@ -1,11 +1,26 @@
 items:
   - text: Home
     url: /
-  - text: A-level retakes
-    url: /posts/a-level-retakes/
-  - text: A-level courses
-    url: /posts/a-level-courses/
-  - text: A-level results day
-    url: /posts/a-level-results-day/
-  - text: Blog
-    url: /blog/
+  - text: Retakes
+    dropdown: true
+    children:
+      - text: A-Level Retakes
+        url: /a-level-retakes/
+      - text: GCSE Retakes
+        url: /gcse-retakes/
+  - text: Courses
+    dropdown: true
+    children:
+      - text: A-Level Courses
+        url: /a-level-courses/
+      - text: Private Tuition
+        url: /private-tuition/
+  - text: Results Day
+    url: /a-level-results-day/
+  - text: Resources
+    url: /resources/
+  - text: FAQ
+    url: /faq/
+  - text: Enquire Now
+    url: /enquiry/
+    highlight: true
