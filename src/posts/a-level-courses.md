@@ -1,6 +1,6 @@
 ---
 title: A-Level Courses
-description: A Level Retake Courses
+description: Explore A-Level courses across Sciences, Maths, Humanities, Languages and the Arts. Flexible one-to-one or small group teaching tailored to any exam board.
 date: 2024-03-11T11:28:32.363Z
 type: article
 tags:

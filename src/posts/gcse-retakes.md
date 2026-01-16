@@ -1,6 +1,6 @@
 ---
 title: GCSE Retakes
-description: GCSE Retakes Information & Courses
+description: Retake your GCSEs with tailored courses in Maths, English and more. Flexible timetables, proven results, and a pathway to A-Levels and top universities.
 date: 2024-03-11T11:28:32.363Z
 type: article
 tags:

@@ -1,6 +1,6 @@
 ---
 title: Private Tuition
-description: Private Lessons for A-Level and GCSE Candidates
+description: One-to-one private tuition for A-Level and GCSE students. Personalised teaching tailored to your pace, with specialist tutors and flexible scheduling.
 date: 2024-03-13T09:11:44.082Z
 type: article
 tags:

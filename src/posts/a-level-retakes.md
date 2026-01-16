@@ -1,6 +1,6 @@
 ---
 title: A-Level Retakes
-description: "When are a level retakes "
+description: Improve your A-Level grades with expert retake courses. Available in May/June and October/November exam series. 80% of students achieve A*-B grades.
 date: 2024-03-11T11:28:32.363Z
 type: article
 tags:

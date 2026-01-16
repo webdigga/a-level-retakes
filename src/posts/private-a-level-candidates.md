@@ -1,6 +1,6 @@
 ---
 title: About Us
-description: What Information You Can Expect To Find Here
+description: Information for private A-Level candidates. Find exam centres, registration guidance, and support for external students taking A-Levels independently.
 date: 2024-03-11T11:28:32.363Z
 type: article
 tags:

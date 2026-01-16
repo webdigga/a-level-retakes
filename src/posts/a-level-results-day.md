@@ -1,6 +1,6 @@
 ---
 title: A-Level Results Day
-description: Your Questions Answered
+description: Everything you need to know about A-Level Results Day. When results are released, how to collect them, appeals process, and what to do if you miss your grades.
 date: 2024-03-11T11:28:32.363Z
 type: article
 tags:
