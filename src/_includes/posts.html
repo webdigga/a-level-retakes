@@ -13,8 +13,10 @@ layout: default
   "datePublished": "{{ date.toISOString() }}",
   "dateModified": "{{ date.toISOString() }}",
   "author": {
-    "@type": "Organization",
-    "name": "A-Level Retakes"
+    "@type": "Person",
+    "name": "{{ settings.editor.name }}",
+    "url": "{{ settings.url }}",
+    "image": "{{ settings.url }}{{ settings.editor.image }}"
   },
   "publisher": {
     "@type": "Organization",
@@ -450,8 +452,14 @@ layout: default
 <div class="bg-gradient-to-br from-[color:var(--primary-color)] to-[#1a4a8f] text-white py-12 lg:py-16">
 	<div class="container mx-auto px-6 xl:max-w-5xl">
 		<div class="flex items-center justify-center gap-3 mb-4">
-			<span class="bg-white/20 text-white text-xs font-medium px-3 py-1 rounded-full">Resource</span>
+			<img src="{{ settings.editor.image }}" alt="{{ settings.editor.name }}" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-white/30" />
+			<span class="text-white/90 text-sm font-medium">{{ settings.editor.name }}</span>
+			<span class="text-white/40">|</span>
+			<span class="text-white/90 text-sm">{{ settings.editor.role }}</span>
+			<span class="text-white/40">|</span>
 			<time class="text-white/70 text-sm">{{ date | readableDate }}</time>
+			<span class="text-white/40">|</span>
+			<span class="text-white/70 text-sm">{{ content | readingTime }}</span>
 		</div>
 		<h1 class="font-bold text-3xl lg:text-5xl mb-4">{{ title }}</h1>
 		{% if description %}
@@ -481,6 +489,20 @@ layout: default
 			{{ content | safe }}
 
 		</article>
+
+		{% if 'resource' in tags %}
+		<!-- Author Bio -->
+		<div class="mt-10 pt-8 border-t border-gray-200">
+			<div class="flex items-start gap-4">
+				<img src="{{ settings.editor.image }}" alt="{{ settings.editor.name }}" width="48" height="48" class="w-12 h-12 rounded-full object-cover" />
+				<div>
+					<p class="font-semibold text-gray-900">{{ settings.editor.name }}</p>
+					<p class="text-sm text-gray-500 mb-2">{{ settings.editor.role }}</p>
+					<p class="text-sm text-gray-600">{{ settings.editor.bio }}</p>
+				</div>
+			</div>
+		</div>
+		{% endif %}
 
 		<!-- Highlight boxes -->
         {% if highlightsBoxes[0] %}

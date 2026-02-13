@@ -16,6 +16,7 @@ layout: resourceList
                     Featured
                 </span>
                 <time class="text-white/70 text-sm">{{ featuredPost.data.date | readableDate }}</time>
+                <span class="text-white/70 text-sm">{{ featuredPost.templateContent | readingTime }}</span>
             </div>
             <h2 class="text-2xl lg:text-4xl font-bold text-white mb-4 group-hover:text-gray-100 transition-colors">
                 {{ featuredPost.data.title }}
@@ -57,7 +58,10 @@ layout: resourceList
 
                 <!-- Content -->
                 <div class="flex-grow">
-                    <time class="text-sm text-gray-500 mb-1 block lg:hidden">{{ resource.data.date | readableDate }}</time>
+                    <div class="flex items-center gap-2 text-sm text-gray-500 mb-1 lg:hidden">
+                        <time>{{ resource.data.date | readableDate }}</time>
+                        <span>{{ resource.templateContent | readingTime }}</span>
+                    </div>
                     <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-[color:var(--primary-color)] transition-colors">
                         {{ resource.data.title }}
                     </h3>

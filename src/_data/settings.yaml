@@ -10,3 +10,8 @@ description: A-level retakes, courses, and private tuition
 type: website
 logoAlt: A-level retakes Logo
 logoUrl: /static/img/logo.png
+editor:
+  name: Jonny Rowse
+  role: Education Editor
+  image: /static/img/authors/jonny-rowse.webp
+  bio: "Jonny covers A-Level retakes, exam preparation, and university admissions across the UK. With years of experience in the education sector, he provides practical guidance for students and parents navigating the retake process."

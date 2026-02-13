@@ -20,6 +20,15 @@ module.exports = function (eleventyConfig) {
     );
   });
 
+  // Reading time filter
+  eleventyConfig.addFilter("readingTime", (content) => {
+    if (!content) return "1 min read";
+    const text = content.replace(/<[^>]+>/g, '').replace(/[#*\[\]()_|`>-]/g, '');
+    const words = text.trim().split(/\s+/).length;
+    const minutes = Math.max(1, Math.round(words / 230));
+    return `${minutes} min read`;
+  });
+
   // Syntax Highlighting for Code blocks
   eleventyConfig.addPlugin(syntaxHighlight);
 
