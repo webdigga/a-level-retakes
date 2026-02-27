@@ -5,7 +5,6 @@ date: 2024-03-13T09:11:44.082Z
 type: article
 tags:
   - article
-heroImage: /static/img/private-tuition-large.webp
 ---
 Westminster Tutors specialise in providing personalised, one-to-one tuition in all subjects and at all levels. Their approach is tailored to each student's individual needs, ensuring they receive the support and guidance necessary to excel academically.
 

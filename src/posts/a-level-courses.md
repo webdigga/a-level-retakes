@@ -5,7 +5,6 @@ date: 2024-03-11T11:28:32.363Z
 type: article
 tags:
   - article
-heroImage: /static/img/exam-courses-large.webp
 highlightsBoxes:
   - title: The Arts
     highlightsListItem:

@@ -5,7 +5,6 @@ date: 2026-01-05
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 Feeling anxious before exams is completely normal - in fact, a small amount of stress can actually improve performance. However, when anxiety becomes overwhelming, it can interfere with your ability to think clearly and demonstrate what you know. Here's how to manage exam anxiety effectively.

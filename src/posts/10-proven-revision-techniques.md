@@ -5,7 +5,6 @@ date: 2026-01-10
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 Preparing for A-Level exams can feel overwhelming, but with the right revision techniques, you can maximise your study time and achieve better results. Whether you're preparing for your first attempt or [retaking your A-Levels](/a-level-retakes/), these proven strategies will help you study smarter, not harder.

@@ -5,7 +5,6 @@ date: 2024-03-11T11:28:32.363Z
 type: article
 tags:
   - article
-heroImage: /static/img/exam-results-day-large.webp
 ---
 A-Level results day is a significant milestone for students across the UK. Here's everything you need to know about what to expect and how to prepare.
 

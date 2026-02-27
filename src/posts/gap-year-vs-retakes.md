@@ -5,7 +5,6 @@ date: 2025-12-15
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 After receiving A-Level results that weren't what you hoped for, you face an important decision: should you take a gap year or [retake your exams](/a-level-retakes/)? Both options have merits, and the right choice depends on your individual circumstances, goals, and preferences.

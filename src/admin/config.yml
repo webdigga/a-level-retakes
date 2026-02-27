@@ -33,14 +33,6 @@ collections:
         multiple: true
         create: true
         options: ["article", "resource", "privacy"]
-      - label: "Hero image"
-        name: "heroImage"
-        widget: "image"
-        choose_url: true
-        required: false
-        media_library:
-          config:
-            multiple: false
       - label: "Highlights box"
         name: "highlightsBoxes"
         widget: "list"

@@ -5,7 +5,6 @@ date: 2026-02-06
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 If you didn't get the A-Level grades you needed, retaking privately is a flexible and increasingly popular option. Whether you left school, are working, or simply prefer to study independently, you can resit your A-Levels as a private candidate without being enrolled at a school or college.

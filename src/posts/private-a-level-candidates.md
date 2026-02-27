@@ -5,7 +5,6 @@ date: 2024-03-11T11:28:32.363Z
 type: article
 tags:
   - article
-heroImage: /static/img/private-exam-candidates-large.webp
 ---
 Whether you're considering retaking exams to improve your grades or exploring options for further education, this resource is designed to provide you with the guidance and support you need to make informed decisions about your academic future.
 

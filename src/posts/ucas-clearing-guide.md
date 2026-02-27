@@ -5,7 +5,6 @@ date: 2026-01-08
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 If your A-Level results weren't quite what you expected, UCAS Clearing offers a valuable opportunity to still secure a university place. This comprehensive guide explains everything you need to know about the Clearing process and how to make the most of it.

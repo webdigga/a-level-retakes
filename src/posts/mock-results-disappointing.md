@@ -5,7 +5,6 @@ date: 2026-02-20
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 Mock results have landed for most A-Level students across the UK, and if yours were lower than you hoped, you are not alone. Every year, thousands of students open their mock results feeling deflated, anxious, or unsure about what happens next.

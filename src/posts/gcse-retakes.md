@@ -5,7 +5,6 @@ date: 2024-03-11T11:28:32.363Z
 type: article
 tags:
   - article
-heroImage: /static/img/gcse-retakes-large.webp
 ---
 Westminster Tutors stands out as a premier independent college, renowned for its excellence in education. As one of the leading private sixth form colleges in London, they offer specialised GCSE retake courses designed to help individuals enhance their grades and achieve academic success. Here's why retaking with Westminster Tutors is the ideal choice:
 

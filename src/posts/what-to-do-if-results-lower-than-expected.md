@@ -5,7 +5,6 @@ date: 2026-01-03
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 Opening your A-Level results to find they're not what you expected is one of the most stressful experiences for students. But before you panic, remember that you have options. This guide will help you navigate this challenging situation and find the best path forward.

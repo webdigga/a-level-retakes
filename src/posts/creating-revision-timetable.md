@@ -5,7 +5,6 @@ date: 2025-12-20
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 A well-structured revision timetable is one of the most powerful tools for A-Level success. It helps you cover all your material, reduces stress, and ensures you're making the most of your study time. Here's how to create a timetable that actually works.

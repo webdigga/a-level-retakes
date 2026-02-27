@@ -6,7 +6,6 @@ date: 2024-04-04
 type: article
 tags:
   - resource
-heroImage: /static/img/exam-courses-large.webp
 ---
 Congratulations to everyone who completed their A-Level exams! As you enjoy a well-deserved summer break, here's some essential information about what to expect on A-Level Results Day and the options available to you depending on your results.
 

@@ -5,7 +5,6 @@ date: 2026-02-13
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 If you're sitting A-Levels in 2026, the next few months are some of the most important of your academic life. Knowing exactly when everything happens, from mock exams to results day, isn't just helpful for planning. It removes one source of anxiety and lets you focus entirely on preparation.

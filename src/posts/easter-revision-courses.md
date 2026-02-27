@@ -5,7 +5,6 @@ date: 2026-02-06
 type: article
 tags:
   - resource
-heroImage: /static/img/hero.webp
 ---
 
 Easter is a critical window in the exam calendar. With just weeks remaining before the May/June exam series, an intensive Easter revision course can be the difference between hitting your target grade and falling short. These short, focused programmes are designed to consolidate your knowledge, fill gaps, and sharpen your exam technique when it matters most.
