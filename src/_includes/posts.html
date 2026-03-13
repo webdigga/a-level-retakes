@@ -451,15 +451,18 @@ layout: default
 {# Resource posts get the full header treatment #}
 <div class="bg-gradient-to-br from-[color:var(--primary-color)] to-[#1a4a8f] text-white py-12 lg:py-16">
 	<div class="container mx-auto px-6 xl:max-w-5xl">
-		<div class="flex items-center justify-center gap-3 mb-4">
-			<img src="{{ settings.editor.image }}" alt="{{ settings.editor.name }}" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-white/30" />
-			<span class="text-white/90 text-sm font-medium">{{ settings.editor.name }}</span>
-			<span class="text-white/40">|</span>
-			<span class="text-white/90 text-sm">{{ settings.editor.role }}</span>
-			<span class="text-white/40">|</span>
-			<time class="text-white/70 text-sm">{{ date | readableDate }}</time>
-			<span class="text-white/40">|</span>
-			<span class="text-white/70 text-sm">{{ content | readingTime }}</span>
+		<div class="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4">
+			<div class="flex items-center gap-2">
+				<img src="{{ settings.editor.image }}" alt="{{ settings.editor.name }}" width="32" height="32" class="w-8 h-8 rounded-full object-cover border border-white/30" />
+				<span class="text-white/90 text-sm font-medium">{{ settings.editor.name }}</span>
+				<span class="text-white/40 hidden sm:inline">|</span>
+				<span class="text-white/90 text-sm">{{ settings.editor.role }}</span>
+			</div>
+			<div class="flex items-center gap-2">
+				<time class="text-white/70 text-sm">{{ date | readableDate }}</time>
+				<span class="text-white/40">|</span>
+				<span class="text-white/70 text-sm">{{ content | readingTime }}</span>
+			</div>
 		</div>
 		<h1 class="font-bold text-3xl lg:text-5xl mb-4">{{ title }}</h1>
 		{% if description %}
