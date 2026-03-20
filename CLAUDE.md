@@ -54,8 +54,8 @@ Information site for A-level retake students.
 - **Layout:** `posts.html` template (via `posts.json` directory data)
 - **Frontmatter:** `title`, `description`, `date` (YYYY-MM-DD), `type` (`article` or `resource`), `tags` (array)
 - **Tags:** Two content categories:
-  - `resource` = informational guides (URL under `/resources/`)
-  - `article` = core pages (URL under `/posts/`)
+  - `resource` = informational guides and blog posts (URL under `/resources/`). **Use this for all new blog content.**
+  - `article` = core/static pages only (URL under `/posts/`). Do NOT use for new blog posts.
 - **Permalink:** Default Eleventy path (no explicit permalink set). URLs are based on tag collection + filename, not the title
 - **Lead capture:** Site captures leads for Westminster Tutors via `/enquiry/` form. No external links to Westminster Tutors or competitors in blog content
 - **Images:** No images in blog posts

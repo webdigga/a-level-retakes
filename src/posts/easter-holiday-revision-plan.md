@@ -4,7 +4,7 @@ description: "Plan your Easter holiday revision effectively with this day-by-day
 date: 2026-03-20
 type: article
 tags:
-  - article
+  - resource
 ---
 
 Easter 2026 falls on 5 April, giving most students around 13 days off before the final push to exams on 11 May. That is nearly two full weeks of uninterrupted revision time, with no lessons, no homework deadlines, and no timetable clashes. Used well, it can be the single most productive stretch of your entire A-Level preparation. Wasted, it becomes two weeks of guilt and growing panic.
