@@ -69,7 +69,7 @@ Information site for A-level retake students.
 
 | Type | Count | Location |
 |------|-------|----------|
-| Blog posts | 22 | `src/posts/` |
+| Blog posts | 23 | `src/posts/` |
 
 ## Status: Live
 Ongoing content updates.
