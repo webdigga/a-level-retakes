@@ -11,6 +11,7 @@
 - **FAQs:** Include FAQ sections where possible (good for featured snippets and AEO)
 - **Tables:** Use nicely styled tables for tabular data
 - **SVG charts:** Do NOT use inline SVG charts in blog posts. The html-minifier strips whitespace and breaks SVG rendering. Use tables instead for data visualisation.
+- **SVG blank lines:** Never include blank lines inside `<svg>...</svg>` blocks in markdown files. CommonMark treats a blank line as the end of an HTML block, which truncates the SVG. All SVG content must be on consecutive non-blank lines.
 - **Internal linking:** Link to other pages/posts on the same site
 - **External linking:** Link to authoritative external sources where relevant. The markdown-it renderer in `.eleventy.js` auto-adds `target="_blank"`, `rel="noopener noreferrer"`, and an external link icon SVG to any link starting with `http`. Just use standard markdown link syntax: `[text](https://url)`. No manual HTML or kramdown attributes needed. **Every external URL should be verified with a curl/fetch check (expecting a 200 status) before being added to an article.** If a URL returns a non-200 status, find a working alternative. If you cannot verify URLs (e.g. no network access), still include them but flag which ones were not verified so the user can check them.
 - **UK English:** Use UK spelling throughout (colour, organised, centralised, etc.)
